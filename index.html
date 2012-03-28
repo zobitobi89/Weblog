@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="scripting.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Post it!</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="main">
+				<div class="content">
+					<div class="header"></div>
+					<div class="tabs" id="tabs">
+						<ul>
+							<li>
+								<a href="#tabs-1">Preloaded</a>
+							</li>
+							<li>
+								<a href="ajax/content1.html">Tab 1</a>
+							</li>
+							<li>
+								<a href="ajax/content2.html">Tab 2</a>
+							</li>
+							<li>
+								<a href="ajax/content3-slow.php">Tab 3 (slow)</a>
+							</li>
+							<li>
+								<a href="ajax/content4-broken.php">Tab 4 (broken)</a>
+							</li>
+						</ul>
+					</div>
+					<div id="tabs-1">
+						<div class="entrybox">
+							<p>
+								Title:
+								<input type="text" name="title" style="font-weight: bold;">
+								Author:
+								<input type="text" name="author" style="font-weight: bold;">
+							</p>
+							<p style="text-align: top;">
+								<textarea name="text" cols="35" rows="7"></textarea>
+							</p>
+							<br>
+							<p>
+								<input type="submit" name="send" onclick="">
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

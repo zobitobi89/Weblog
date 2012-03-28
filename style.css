@@ -1,0 +1,76 @@
+body {
+	color: black;
+	font: 13px Georgia;
+	background: url(BG.svg);
+}
+h1.heading {
+	color: orange;
+	text-align: center;
+	size: 80pt;
+}
+#wrapper {
+	height: 100%;
+	width: 100%;
+	display: table;
+	margin: 0 auto;
+}
+#main {
+	width: 100%;
+	display: table-row;
+	min-height: 100%;
+}
+.content {
+	background: #FFFFFF;
+	background-image: url(images/holz_textur.png);
+	width: 900px;
+	height: 1200px;
+	border-radius: 15px;
+	margin: 0 auto;
+	visibility: 50%;
+}
+.navbar {
+	background-color: #FFFFFF;
+	float: left;
+	position: relative;
+	height: 300px;
+	width: 150px;
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	margin-left: 50px;
+}
+.header {
+	background: url(images/Unbenannt.png) no-repeat;
+	background-position: center;
+	height: 300px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+IMG.displayed {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.tabs {
+	background: url(images/Schnipsel.png);
+	background-repeat: repeat-x;
+}
+.entrybox {
+	background: url(images/Comment.png) no-repeat;
+	background-position: center;
+	background
+	background-size: 70%;
+	border: solid 1px black;
+	text-align: center;
+}
+textarea {
+	resize: none;
+	width: auto;
+	height: auto;
+	margin-left: 75px;
+	margin-top: 35px;
+	background-color: transparent;
+	border: transparent;
+}
