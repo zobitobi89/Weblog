@@ -1,1 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram></umlet_diagram>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.4">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>520</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>blogentries
+--
+
+bg=gray
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>40</x>
+      <y>60</y>
+      <w>480</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>entries
+--
+- id (primary key), autoincrement, TYP: INT
+- datum, getdate(), TYP: date
+- title, Typ: VARCHAR(50)
+- author, Typ: VARCHAR(50)
+- content, Typ: TEXT
+bg=white
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
