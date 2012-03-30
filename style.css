@@ -2,6 +2,8 @@ body {
 	color: black;
 	font: 13px Georgia;
 	background: url(BG.svg);
+	width: 100%;
+	height: 100px:
 }
 h1.heading {
 	color: orange;
@@ -11,12 +13,10 @@ h1.heading {
 #wrapper {
 	height: 100%;
 	width: 100%;
-	//display: table;
 	margin: 0 auto;
 }
 #main {
 	width: 100%;
-	//display: table-row;
 	min-height: 100%;
 }
 .content {
