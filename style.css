@@ -11,12 +11,12 @@ h1.heading {
 #wrapper {
 	height: 100%;
 	width: 100%;
-	display: table;
+	//display: table;
 	margin: 0 auto;
 }
 #main {
 	width: 100%;
-	display: table-row;
+	//display: table-row;
 	min-height: 100%;
 }
 .content {
@@ -28,16 +28,7 @@ h1.heading {
 	margin: 0 auto;
 	visibility: 50%;
 }
-.navbar {
-	background-color: #FFFFFF;
-	float: left;
-	position: relative;
-	height: 300px;
-	width: 150px;
-	border-bottom-left-radius: 15px;
-	border-top-left-radius: 15px;
-	margin-left: 50px;
-}
+
 .header {
 	background: url(images/Unbenannt.png) no-repeat;
 	background-position: center;
@@ -53,10 +44,7 @@ IMG.displayed {
 	margin-left: auto;
 	margin-right: auto;
 }
-.tabs {
-	background: url(images/Schnipsel.png);
-	background-repeat: repeat-x;
-}
+
 .entrybox {
 	background: url(images/Comment.png) no-repeat;
 	background-position: center;
@@ -83,23 +71,21 @@ ul.tabs {
 	padding: 0;
 	float: left;
 	list-style: none;
-	height: 32px; /*--Set height of tabs--*/
-	border-bottom: 1px solid #999;
-	border-left: 1px solid #999;
+	height: 79px; /*--Set height of tabs--*/
 	width: 100%;
+	text-align: center;
 }
 ul.tabs li {
 	float: left;
-	margin: 0;
+	margin-left: 20px;
 	padding: 0;
-	height: 31px; /*--Subtract 1px from the height of the unordered list--*/
-	line-height: 31px; /*--Vertically aligns the text within the tab--*/
-	border: 1px solid #999;
-	border-left: none;
+	height: 79px; /*--Subtract 1px from the height of the unordered list--*/
+	width: 163px;
+	line-height: 60px; /*--Vertically aligns the text within the tab--*/
 	margin-bottom: -1px; /*--Pull the list item down 1px--*/
 	overflow: hidden;
 	position: relative;
-	background: #e0e0e0;
+	background:url(images/Schnipsel.png) no-repeat;
 }
 ul.tabs li a {
 	text-decoration: none;
@@ -107,20 +93,10 @@ ul.tabs li a {
 	display: block;
 	font-size: 1.2em;
 	padding: 0 20px;
-	border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
 	outline: none;
-}
-ul.tabs li a:hover {
-	background: #ccc;
-}
-html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
-	background: #fff;
-	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
 }
 
 .tab_container {
-	border: 1px solid #999;
-	border-top: none;
 	overflow: hidden;
 	clear: both;
 	float: left; width: 100%;
