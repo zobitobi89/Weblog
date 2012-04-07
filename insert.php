@@ -17,3 +17,9 @@ $eintragen = mysql_query($entry);
 
 echo "<a href='index.php'>back</a><br>";
 ?>
+
+<html>
+	<head>
+		<meta HTTP-EQUIV="REFRESH" content="0; url=index.php">
+	</head>
+</html>

@@ -27,25 +27,24 @@
 							</ul>
 							
 							<div id="tab1" class="tab_content">
-										<p>Entries</p>
 										
 											<div class="entrybox">
-												<form action="insert.php" method="post">
-										<p>
-											Title:
-											<input type="text" name="title" style="font-weight: bold;">
-											Author:
-											<input type="text" name="autor" style="font-weight: bold;">
-										</p>
-										<p style="text-align: top;">
-											<textarea name="content" cols="35" rows="7"></textarea>
-										</p>
-										<br>
-										<p>
-											<input type="submit" name="send">
-										</p>
-										
-											</form>
+														<form action="insert.php" method="post">
+												<p>
+													Title:
+													<input type="text" name="title" style="font-weight: bold;">
+													Author:
+													<input type="text" name="autor" style="font-weight: bold;">
+												</p>
+												<p style="text-align: top;">
+													<textarea name="content" cols="35" rows="7"></textarea>
+												</p>
+												<br>
+												<p>
+													<input type="submit" name="send">
+												</p>
+												
+													</form>
 											</div>
 											
 											<?php
@@ -58,8 +57,30 @@
 												    // Anfrage ausfŸhren
 												    $result=sqlQuery($statement);
 												
+												
+													while ($row=mysql_fetch_object($result))
+													{
+													echo "<div class='commentbox'>";
+														echo "<div class='commentheader'>";
+															echo "<table border='0'>";
+																	  echo "<tr>";
+																	    echo "<td rowspan='2' width='41px' style='background: url(images/calicon.png) no-repeat;background-size: 40px' ></td>";
+																	    echo "<td>".$row->title."</td>";
+																	  echo "</tr>";
+																	  echo "<tr>";
+																	    echo "<td>".by ." ".$row->autor."</td>";
+																	  echo "</tr>";		
+															echo "</table>";
+														echo "</div>";
+												
+														echo "<div class='commentcontent'>";
+															echo "$row->content";
+														echo "</div>";
+													echo "</div>";	
+													}
+													
 												    // Tabelle in HTML darstellen
-												    echo "<table border=\"1\">\n";
+												   /* echo "<table border=\"1\">\n";
 												    while ($row=mysql_fetch_row($result))
 												    {
 												        echo "<tr>";
@@ -70,7 +91,7 @@
 														
 												    }
 												    echo "</table>\n";
-												    	    
+												  */  	    
 											?>
 							</div>
 							

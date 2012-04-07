@@ -23,7 +23,7 @@ h1.heading {
 	background: #FFFFFF;
 	background-image: url(images/holz_textur.png);
 	width: 900px;
-	height: 1200px;
+	height: auto;
 	border-radius: 15px;
 	margin: 0 auto;
 }
@@ -49,7 +49,6 @@ IMG.displayed {
 	background-position: center;
 	background
 	background-size: 70%;
-	border: solid 1px black;
 	text-align: center;
 }
 textarea {
@@ -60,6 +59,28 @@ textarea {
 	margin-top: 35px;
 	background-color: transparent;
 	border: transparent;
+}
+
+/*style Commentbox*/
+.commentbox{
+	width: 376px;
+	height: 194px;
+	background:url(images/comment.png) no-repeat;
+	margin: 3px auto;
+	position: relative;
+}
+
+.commentheader{
+	margin-left: 1.8cm;
+	font-size: 12pt;
+	position: absolute;
+	top: 32px;
+}
+
+.commentcontent{
+	margin-left: 1.8cm;
+	position: absolute;
+	top: 80px;
 }
 
 /*TABS*/
