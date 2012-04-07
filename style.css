@@ -83,11 +83,23 @@ textarea {
 	top: 80px;
 }
 
+.infocontainer{
+	width: 100%;
+	height: 20px;
+}
+
+.say{
+	text-align: left;
+}
+
+.infocontainer span{
+	text-align: right;
+}
+
 /*TABS*/
 
 
 ul.tabs {
-	margin: 0;
 	padding: 0;
 	float: left;
 	list-style: none;

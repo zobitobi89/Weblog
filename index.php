@@ -2,7 +2,7 @@
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>This is our Blog!</title>
+    <title>T and T Weblog</title>
 		
 		<script type="text/javascript" src="lib/jquery-1.6.2.js"></script>
 		<script type="text/javascript" src="lib/scripting.js"></script>
@@ -27,6 +27,11 @@
 							</ul>
 							
 							<div id="tab1" class="tab_content">
+								
+								<span class="infocontainer">
+									<input type="Button" value="Say something..." class="say"> <span class="showdate"></span>
+								</span>
+								
 										
 											<div class="entrybox">
 														<form action="insert.php" method="post">
@@ -37,11 +42,11 @@
 													<input type="text" name="autor" style="font-weight: bold;">
 												</p>
 												<p style="text-align: top;">
-													<textarea name="content" cols="35" rows="7"></textarea>
+													<textarea name="content" cols="35" rows="7" id="writecom"></textarea>
 												</p>
 												<br>
 												<p>
-													<input type="submit" name="send">
+													<input type="submit" name="send" value="Share it!">
 												</p>
 												
 													</form>
@@ -64,7 +69,7 @@
 														echo "<div class='commentheader'>";
 															echo "<table border='0'>";
 																	  echo "<tr>";
-																	    echo "<td rowspan='2' width='41px' style='background: url(images/calicon.png) no-repeat;background-size: 40px' ></td>";
+																	    echo "<td rowspan='2' width='41px' style='background: url(images/calicon.png) no-repeat;background-size: 40px' >".$row->datum."</td>";
 																	    echo "<td>".$row->title."</td>";
 																	  echo "</tr>";
 																	  echo "<tr>";
@@ -78,20 +83,6 @@
 														echo "</div>";
 													echo "</div>";	
 													}
-													
-												    // Tabelle in HTML darstellen
-												   /* echo "<table border=\"1\">\n";
-												    while ($row=mysql_fetch_row($result))
-												    {
-												        echo "<tr>";
-												        foreach ($row as $item)    // jedes Element $item der Zeile $row durchlaufen
-												            echo "<td>$item</td>";
-															echo "<td><input type='button' value='Like'></td>";
-												        echo "</tr>\n";
-														
-												    }
-												    echo "</table>\n";
-												  */  	    
 											?>
 							</div>
 							
@@ -101,6 +92,10 @@
 							
 							<div id="tab3" class="tab_content">
 							<p>About</p>
+							<p>
+								This is the Weblog which was implemented during the class 'Web Engeneering II'. <br>
+								by Tufan Doenmez and Tobias Zogrotzky
+							</p>
 							</div>
 							
 							<div id="tab4" class="tab_content">
