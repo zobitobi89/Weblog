@@ -48,7 +48,6 @@
 												<p>
 													<input type="submit" name="send" value="Share it!">
 												</p>
-												
 													</form>
 											</div>
 											
@@ -61,15 +60,19 @@
 												
 												    // Anfrage ausführen
 												    $result=sqlQuery($statement);
+													
+													//Monatarray
+													$month=array('','January','February','March','April','May','June','July','August','September','October','November','December');
 												
 												
 													while ($row=mysql_fetch_object($result))
 													{
 													echo "<div class='commentbox'>";
 														echo "<div class='commentheader'>";
-															echo "<table border='0'>";
+															echo "<table class='commenttab'>";
 																	  echo "<tr>";
-																	    echo "<td rowspan='2' width='41px' style='background: url(images/calicon.png) no-repeat;background-size: 40px' >".$row->datum."</td>";
+																	    echo "<td rowspan='2' width='41px'>".$month[substr($row->datum,6,-3)]."<br/>".substr($row->datum,-2)."<sup>th</sup>"."</td>";
+																	    //TODO: add st,nd,rd to days (current status: for all days: th!)
 																	    echo "<td>".$row->title."</td>";
 																	  echo "</tr>";
 																	  echo "<tr>";
@@ -80,6 +83,11 @@
 												
 														echo "<div class='commentcontent'>";
 															echo "$row->content";
+															echo "<form method='post' action='updaterate.php'>";
+															echo "<p><input type='submit' value='&hearts;'</p>";
+															echo "</form>";
+															//TODO: change position of button
+															//TODO: Heart Button needs funtion to increment "rate" column in Database
 														echo "</div>";
 													echo "</div>";	
 													}
@@ -88,6 +96,7 @@
 							
 							<div id="tab2" class="tab_content">
 							<p>Top10</p>
+							<!--TODO-->
 							</div>
 							
 							<div id="tab3" class="tab_content">
@@ -100,6 +109,7 @@
 							
 							<div id="tab4" class="tab_content">
 							<p>Contact us</p>
+							<!--TODO-->
 							</div>
 				</div>
 			

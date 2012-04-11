@@ -9,9 +9,9 @@ $con = mysql_real_escape_string ($_POST['content']);
 
 
 $entry = "INSERT INTO entries
-(datum,title,autor,content)
+(datum,title,autor,content,rate)
 VALUES
-(CURDATE( ), '$tit', '$aut','$con')";
+(CURDATE( ), '$tit', '$aut','$con',1)";
 
 $eintragen = mysql_query($entry);
 
