@@ -42,13 +42,14 @@
 													<input type="text" name="autor" style="font-weight: bold;">
 												</p>
 												<p style="text-align: top;">
-													<textarea name="content" cols="35" rows="7" id="writecom"></textarea>
+													<textarea class="textcom" name="content" cols="35" rows="7" id="writecom"></textarea>
 												</p>
 												<br>
 												<p>
 													<input type="submit" name="send" value="Share it!">
 												</p>
 													</form>
+													<!--TODO: fetch invalid entries(see insert.php)...-->
 											</div>
 											
 											<?php
@@ -56,7 +57,7 @@
 												    require_once "dbinit.php";
 												
 												    // SQL-Anfrage: Ergebnis ist stets eine Tabelle
-												    $statement="SELECT datum,title,autor,content FROM entries ORDER BY id DESC";
+												    $statement="SELECT id,datum,title,autor,content,rate FROM entries ORDER BY id DESC";
 												
 												    // Anfrage ausfŸhren
 												    $result=sqlQuery($statement);
@@ -80,14 +81,17 @@
 																	  echo "</tr>";		
 															echo "</table>";
 														echo "</div>";
-												
 														echo "<div class='commentcontent'>";
 															echo "$row->content";
-															echo "<form method='post' action='updaterate.php'>";
-															echo "<p><input type='submit' value='&hearts;'</p>";
-															echo "</form>";
-															//TODO: change position of button
-															//TODO: Heart Button needs funtion to increment "rate" column in Database
+															echo "<div class='rate'>";
+															echo "<a class='hearts' href='updaterate.php?id=$row->id'>&hearts;</a>";
+															if($row->rate > 1 || $row->rate == 0){
+															echo "$row->rate hearts";
+															}
+															else {
+															echo "$row->rate heart";	
+															}
+															echo "</div>";
 														echo "</div>";
 													echo "</div>";	
 													}
@@ -95,8 +99,44 @@
 							</div>
 							
 							<div id="tab2" class="tab_content">
-							<p>Top10</p>
-							<!--TODO-->
+								<p>This are the current TOP10 entries...</p>
+							<?php
+							require_once "dbinit.php";
+							
+							$top10 = "SELECT * FROM entries WHERE id > 0 ORDER BY rate DESC LIMIT 10";
+							
+							$restop10 = sqlQuery($top10);
+							
+							while ($row=mysql_fetch_object($restop10))
+													{
+													echo "<div class='commentbox'>";
+														echo "<div class='commentheader'>";
+															echo "<table class='commenttab'>";
+																	  echo "<tr>";
+																	    echo "<td rowspan='2' width='41px'>".$month[substr($row->datum,6,-3)]."<br/>".substr($row->datum,-2)."<sup>th</sup>"."</td>";
+																	    //TODO: add st,nd,rd to days (current status: for all days: th!)
+																	    echo "<td>".$row->title."</td>";
+																	  echo "</tr>";
+																	  echo "<tr>";
+																	    echo "<td>".by ." ".$row->autor."</td>";
+																	  echo "</tr>";		
+															echo "</table>";
+														echo "</div>";
+														echo "<div class='commentcontent'>";
+															echo "$row->content";
+															echo "<div class='rate'>";
+															if($row->rate > 1 || $row->rate == 0){
+															echo "$row->rate hearts";
+															}
+															else {
+															echo "$row->rate heart";	
+															}
+															echo "</div>";
+														echo "</div>";
+													echo "</div>";	
+													}
+							?>
+							
 							</div>
 							
 							<div id="tab3" class="tab_content">
@@ -109,8 +149,24 @@
 							
 							<div id="tab4" class="tab_content">
 							<p>Contact us</p>
-							<!--TODO-->
+							<form method="post">
+												<p>
+													Betreff:
+													<input type="text" name="title" style="font-weight: bold;">
+													Name:
+													<input type="text" name="autor" style="font-weight: bold;">
+												</p>
+												<p style="text-align: top;">
+													<textarea name="content" cols="35" rows="7"></textarea>
+												</p>
+												<br>
+												<p>
+													<input type="submit" name="send" value="Contact us!">
+												</p>
+													</form>
 							</div>
+							
+							<!--TODO: add E-Mail Contact!-->
 				</div>
 			
 			</div>

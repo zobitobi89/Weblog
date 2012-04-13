@@ -1,11 +1,11 @@
 <?php
     include 'dbinit.php';
 	
-	$id = mysql_real_escape_string($_POST['id']);
+	$comid = ($_GET['id']);
 	
 	$update = "UPDATE entries
 				SET rate=rate+1
-				WHERE id=$id";
+				WHERE id='$comid'";
 				
 	mysql_query($update);
 ?>

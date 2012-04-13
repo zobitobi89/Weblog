@@ -51,7 +51,7 @@ IMG.displayed {
 	background-size: 70%;
 	text-align: center;
 }
-textarea {
+.textcom {
 	resize: none;
 	width: auto;
 	height: auto;
@@ -145,4 +145,24 @@ table.commenttab{
 	background: url(images/calicon.png) no-repeat;
 	background-size: 40px;
 	font-size: 12px;
+}
+/*Style Hearts button*/
+.rate{
+	margin-top: 1cm;
+	font-size: 10px;
+}
+
+.hearts{
+	text-decoration: none;
+	font-size: 14px;
+}
+.hearts:active{
+	color: red;
+}
+.hearts:link{
+	color: red;
+}
+
+.hearts:visited{
+	color: red;
 }
