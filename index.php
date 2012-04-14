@@ -156,7 +156,7 @@
 													<input type="text" name="autor" style="font-weight: bold;">
 												</p>
 												<p style="text-align: top;">
-													<textarea name="content" cols="35" rows="7"></textarea>
+													<textarea name="content" cols="50" rows="14"></textarea>
 												</p>
 												<br>
 												<p>
