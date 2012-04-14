@@ -34,7 +34,7 @@
 								
 										
 											<div class="entrybox">
-														<form action="insert.php" method="post">
+														<form action="insert.php" method="post" onSubmit="return checkform()" name="entrycommbox">
 												<p>
 													Title:
 													<input type="text" name="title" style="font-weight: bold;">
@@ -49,7 +49,6 @@
 													<input type="submit" name="send" value="Share it!">
 												</p>
 													</form>
-													<!--TODO: fetch invalid entries(see insert.php)...-->
 											</div>
 											
 											<?php
@@ -149,7 +148,7 @@
 							
 							<div id="tab4" class="tab_content">
 							<p>Contact us</p>
-							<form method="post">
+							<form action="mailto:to2912@googlemail.com" method="post" name="mailform" onsubmit="return checkmailform()" enctype="text/plain">
 												<p>
 													Betreff:
 													<input type="text" name="title" style="font-weight: bold;">
@@ -165,8 +164,6 @@
 												</p>
 													</form>
 							</div>
-							
-							<!--TODO: add E-Mail Contact!-->
 				</div>
 			
 			</div>

@@ -9,6 +9,7 @@ $con = mysql_real_escape_string ($_POST['content']);
 
 //TODO: fetch invalid entries!
 
+
 $entry = "INSERT INTO entries
 (datum,title,autor,content,rate)
 VALUES
@@ -16,7 +17,7 @@ VALUES
 
 $eintragen = mysql_query($entry);
 
-echo "<a href='index.php'>back</a><br>";
+
 ?>
 
 <html>
